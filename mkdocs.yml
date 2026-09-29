@@ -1,0 +1,40 @@
+site_name: EEPROM Lab | База Знаний & DIY
+site_description: Справочник по ремонту электроники, схемы самоделок и микроконтроллеры
+site_author: Aydin
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Включить светлую тему
+    - scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Включить темную тему
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+nav:
+  - Главная: index.md
+  - 🛠 Самоделки: diy.md
+  - 📺 Ремонт ТВ: tv.md
+  - 💻 Ноутбуки: laptops.md
