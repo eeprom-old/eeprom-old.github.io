@@ -1,30 +1,34 @@
-site_name: EEPROM Lab | База Знаний & DIY
-site_description: Справочник по ремонту электроники, схемы самоделок и микроконтроллеры
+site_name: EEPROM Lab | База Знаний
+site_description: Инженерная база знаний: ремонт электроники, микроконтроллеры, самоделки
 site_author: Aydin
 
 theme:
   name: material
   language: ru
   palette:
+    # Темная тема (основная)
     - scheme: slate
-      primary: teal
-      accent: deep orange
+      primary: blue grey
+      accent: cyan
       toggle:
-        icon: material/weather-night
-        name: Включить светлую тему
+        icon: material/lightbulb-outline
+        name: Включить свет
+    # Светлая тема
     - scheme: default
-      primary: teal
-      accent: deep orange
+      primary: blue grey
+      accent: cyan
       toggle:
-        icon: material/weather-sunny
-        name: Включить темную тему
+        icon: material/lightbulb-on
+        name: Выключить свет
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.code.copy
+    - navigation.tabs           # Верхние вкладки-кнопки
+    - navigation.tabs.sticky    # Вкладки не уезжают при скролле вниз
+    - navigation.sections       # Красивые группировки в левом меню
+    - navigation.top            # Кнопка "Наверх"
+    - search.suggest            # Умные подсказки в поиске
+    - search.highlight          # Подсветка найденного
+    - content.code.copy         # Кнопка копирования кода прошивок
+    - toc.integrate             # Оглавление статьи встроено в левое меню
 
 markdown_extensions:
   - admonition
@@ -33,11 +37,28 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
 
+# Здесь позже добавим Disqus, когда зарегистрируешь там аккаунт
+# extra:
+#   disqus: твой_логин_disqus
+
 nav:
-  - Главная: index.md
-  - 🛠 Самоделки: diy.md
-  - 📺 Ремонт ТВ: tv.md
-  - 💻 Ноутбуки: laptops.md
-  - 🧺 СМА: appliances/washing-machines.md
-  - ❄️ Кондиционеры: appliances/air-conditioners.md
-  - 🔌 Прочая техника: appliances/other.md
+  - 🏠 Главная: index.md
+  
+  - 🔬 Лаборатория (DIY):
+      - 📟 Измерительные приборы: diy/instruments.md
+      - 🧠 Проекты на MCU (AVR, PIC, STM): diy/mcu.md
+      - 🔌 Программаторы & Утилиты: diy/programmers.md
+      
+  - 📺 Ремонт ТВ и Мониторов:
+      - 🛠 Main-платы & UART логи: tv/main.md
+      - 💡 БП & Доработка подсветки: tv/psu.md
+      - 💾 Работа с eMMC / SPI: tv/memory.md
+      
+  - 💻 Ремонт Ноутбуков:
+      - ⚡ Дежурки и Чарджеры: laptops/power.md
+      - ⚙️ Прошивка EC-мультов: laptops/ec.md
+      
+  - ⚙️ Бытовая Техника (СМА и Холод):
+      - 🧺 СМА (Инверторы и модули): appliances/washing-machines.md
+      - ❄️ Кондиционеры (IPM и связь): appliances/air-conditioners.md
+      - 🧊 Холодильники (Модули и Обманки): appliances/fridges.md
